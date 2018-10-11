@@ -100,7 +100,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
 
 " Set cursor line background color
-hi CursorLine guibg=#373737
+hi CursorLine guibg=#202020
 
 " Always enable rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
