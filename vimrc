@@ -12,9 +12,7 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set columns=120
-set cursorline
 set expandtab
-set guicursor=a:blinkon0
 " set guifont=Monaco\ 10
 set guifont=Fantasque\ Sans\ Mono\ 13
 set guioptions-=r
@@ -95,15 +93,33 @@ autocmd BufRead,BufNewFile *.conf    set syntax=dosini
 autocmd BufRead,BufNewFile *.timer   set syntax=dosini
 autocmd BufRead,BufNewFile *.yml     set syntax=ansible
 
-" Highlight text beyond 120 characters
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%121v.\+/
-
-" Set cursor line background color
-hi CursorLine guibg=#202020
-
-" Always enable rainbow parenthesis
+" RainbowParenthesis settings
+"
+"   Always enable rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" CursorLine settings
+"
+"   Enable cursor line
+"
+set cursorline
+
+"   Disable blinking
+"
+set guicursor=a:blinkon0
+
+"   Darker background
+"
+hi CursorLine guibg=#202020
+
+"   Darker background (colorscheme override)
+"
+au ColorScheme * hi CursorLine guibg=#202020
+
+"   Highlight text beyond 120 characters
+"
+hi OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%121v.\+/
